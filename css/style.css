@@ -84,6 +84,7 @@ body {
     background-color: #1f232c !important;
     border-radius: 14px !important;
     color: #cccccc !important;
+    box-shadow: none !important;
 }
 .btn {
     padding: 4px 6px !important;
@@ -93,6 +94,7 @@ body {
     font-size: 8px !important;
     margin-left: -30px !important;
     margin-right: 10px;
+    z-index: 3 !important;
 }
 .glyphicon {
     top: inherit !important;
@@ -230,6 +232,9 @@ body {
 }
 .footer div input {
     padding:10px;
+}
+.footer div input:focus{
+    outline: none !important;
 }
 .newsletter{
     padding: 10px 12px;
@@ -456,8 +461,11 @@ body {
     }
 }
 @media (min-width: 1200px){
-    .wapper-container{
+    .main-content{
         width: 1000px;
         margin: auto;
+    }
+    .main-header p{
+        max-width: 700px;
     }
 }
