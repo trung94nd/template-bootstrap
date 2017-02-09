@@ -5,7 +5,7 @@
 
     $user_check = $_SESSION['login_user'];
     if(checksigninemail($user_check)){
-        $signin_session = array('firstname' => 3 ) and  array('lastname' => 4);
+        header("location:admin-news.php");
     }else{
         header("location:signin.php");
     }

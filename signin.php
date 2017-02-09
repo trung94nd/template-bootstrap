@@ -12,11 +12,16 @@
         if(!empty($_POST['inputEmail']) && !empty($_POST['inputPassword']) && filter_var($_POST['inputEmail'], FILTER_VALIDATE_EMAIL)) {
             $email = $_POST['inputEmail'];
             $password = $_POST['inputPassword'];
-            $password = md5($password);
             $users = checksignin($email, $password);
+
             if($users){
                 $_SESSION['login_user'] = $email;
-                header("location: /blog.html");
+                $roles = checkrole($_SESSION['login_user']);
+                if ($roles) {
+                    header("location: /admin-news.php");
+                }else{
+                    header("location: /blog.html");
+                }
             }else {
                 $error = "Email or Password is invalid";
             }
