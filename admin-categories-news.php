@@ -3,21 +3,20 @@
     include ('./admin-main-left.php');
     include ('./function.php');
     session_start();
-    $arr = shownews();
+    $arr = showcategories();
     echo isset($_SESSION['message']) ? $_SESSION['message'] : '' ;
     session_destroy();
  ?>
 
 <div class="list-action">
-    <a href="./admin-add-news.php" class="btn btn-sm btn-primary pull-right"><i class="fa fa-plus"></i><font class="create-new">CREATE NEW</font></a>
+    <a href="./admin-add-category.php" class="btn btn-sm btn-primary pull-right"><i class="fa fa-plus"></i><font class="create-new">CREATE NEW</font></a>
 </div>
     <div class="dataTable">
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Picture</th>
                     <th>Title</th>
-                    <th class="text-center">New Hot</th>
+                    <th>Posts</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
@@ -26,16 +25,13 @@
                 foreach ($arr as $value) {
                 ?>
                 <tr>
-                    <td><img class="img-preview" src="<?php echo UPLOAD_PATH.$value['thumbnail'] ?>" alt=""></td>
-                    <td><?php echo $value['title'] ?></td>
-                    <td class="text-center" checkbox="checked">
-                        <input type="checkbox">
-                    </td>
+                    <td><?php echo $value['name'] ?></td>
+                    <td></td>
                     <td class="text-center">
-                        <a href="./admin-update-news.php<?php echo "?id=".$value['id'] ?>" class="btn btn-xs btn-default btn-update" >
+                        <a href="./admin-update-category.php<?php echo "?id=".$value['id'] ?>" class="btn btn-xs btn-default btn-update" >
                             <i class="fa fa-pencil"></i>
                         </a>
-                        <a href="./admin-delete-news.php<?php echo "?id=".$value['id'] ?>" class="btn btn-xs btn-default btn-delete-action">
+                        <a href="./admin-delete-category.php<?php echo "?id=".$value['id'] ?>" class="btn btn-xs btn-default btn-delete-action">
                             <i class="fa fa-trash-o"></i>
                         </a>
                     </td>

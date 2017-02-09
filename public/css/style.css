@@ -500,7 +500,7 @@ body {
     overflow: hidden;
 }
 .title-post {
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 0;
 }
 .describe-content {
@@ -562,4 +562,20 @@ body {
 .blog-detail-content p{
     line-height: 1.4;
     font-size: 14px;
+}
+.customize-ad_header {
+    height: 70px;
+    line-height: 70px;
+    border-bottom: 2px solid #d1d1d1;
+    margin-bottom: 30px;
+}
+.title-_ad {
+    line-height: 70px;
+}
+.create-new {
+    margin-left: 5px;
+}
+.checkbox-child {
+    margin-top: 5px !important;
+    margin-right: 5px !important;
 }

@@ -20,4 +20,15 @@
         <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
     </head>
     <body>
-    <h1>Admin</h1>
+    <header class="header customize-ad_header">
+      <div class="container-fluid">
+          <div class="row">
+                <div class="col-sm-3">
+                    <h1 class="title-_ad offset-0"><a href="./admin.php" title="">Admin</a></h1>
+                </div>
+                <div class="col-sm-9 text-right">
+                    <a href="./logout.php" title="">Signout</a>
+                </div>
+          </div>
+      </div>
+    </header><!-- /header -->
