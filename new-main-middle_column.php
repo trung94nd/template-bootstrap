@@ -10,6 +10,7 @@
             <div class="col-sm-8 pd-0">
                 <?php
                     foreach ($arr as $value) {
+                    $newDate = date("d-m-Y", strtotime($value['created_at']));
                  ?>
                     <div class="post-item">
                         <div class="col-sm-4">
@@ -18,7 +19,7 @@
                         <div class="col-sm-8 pd-0">
                             <div class="post-describe">
                                 <h3 class="title-post"><a href="blog-detail.php<?php echo "?id=".$value['id'] ?>" title=""><?php echo $value['title'] ?></a></h3>
-                                <time datetime="2011-01-12">January 12th, 2011</time>
+                                <time datetime="<?php echo $newDate; ?>"><?php echo $newDate; ?></time>
                                 <div class="describe-content">
                                     <p><?php echo $value['summary'] ?></p>
                                 </div>

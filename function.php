@@ -46,13 +46,13 @@
     }
     function insertnews($attributes)
     {
-        $sql = "INSERT INTO news(title,slug,category_id,summary,content,thumbnail,featured) VALUES ('${attributes['title']}','${attributes['slug']}','${attributes['category_id']}','${attributes['summary']}','${attributes['content']}','${attributes['thumbnail']}','${attributes['featured']}')";
+        $sql = "INSERT INTO news(title,slug,category_id,summary,content,thumbnail,featured,created_at) VALUES ('${attributes['title']}','${attributes['slug']}','${attributes['category_id']}','${attributes['summary']}','${attributes['content']}','${attributes['thumbnail']}','${attributes['featured']}', '${attributes['created_at']}')";
         $result = mysqli_query($GLOBALS['db'],$sql);
         return $result;
     }
     function updatenews($id, $attributes)
     {
-        $sql = "UPDATE news SET title = '${attributes['title']}', slug = '${attributes['slug']}', category_id = '${attributes['category_id']}', summary = '${attributes['summary']}', content = '${attributes['content']}', thumbnail = '${attributes['thumbnail']}', featured = '${attributes['featured']}' WHERE id = $id";
+        $sql = "UPDATE news SET title = '${attributes['title']}', slug = '${attributes['slug']}', category_id = '${attributes['category_id']}', summary = '${attributes['summary']}', content = '${attributes['content']}', thumbnail = '${attributes['thumbnail']}', featured = '${attributes['featured']}', created_at = '${attributes['created_at']}' WHERE id = $id";
         $result = mysqli_query($GLOBALS['db'],$sql);
         return $result;
     }

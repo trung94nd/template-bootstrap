@@ -82,7 +82,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <?php
-                        foreach ($arr as $value) {
+                        foreach ($arr as $key => $value) {
+                            if ($key < 6) {
                      ?>
                         <div class="col-md-4 col-sm-6 margin-bottom-30 text-center">
                             <div class="item-product">
@@ -97,7 +98,7 @@
                                 </div>
                             </div>
                         </div>
-                    <?php } ?>
+                    <?php }} ?>
                 </div>
             </div>
         </div>

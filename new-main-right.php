@@ -18,12 +18,13 @@
                     <div class="title-neswhot">NEWS HOT</div>
                     <?php
                         foreach (shownewshot() as $newhot) {
+                        $newDate = date("d-m-Y", strtotime($newhot['created_at']));
                      ?>
                         <div class="post-item">
                             <div class="col-sm-8 pd-0">
                                 <div class="post-describe">
                                     <h3 class="title-post"><a href="./blog-detail.php<?php echo "?id=".$newhot['id'] ?>" title=""><?php echo $newhot['title'] ?></a></h3>
-                                    <time datetime="2011-01-12">January 12th, 2011</time>
+                                    <time datetime="<?php echo $newDate; ?>"><?php echo $newDate; ?></time>
                                 </div>
                             </div>
                             <div class="col-sm-4 pd-right-0">

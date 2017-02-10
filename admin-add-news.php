@@ -62,9 +62,9 @@
             'summary' => $_POST['summary'],
             'content' => $_POST['content'],
             'thumbnail' => $_FILES['thumbnail']['name'],
-            'featured' => $_POST['featured']
+            'featured' => isset($_POST['featured']) ? $_POST['featured'] : '0',
+            'created_at' => date("Y-m-d H:i:s")
             ];
-
             $newsinsert = insertnews($data);
             if ($newsinsert) {
                 $_SESSION['message'] = "Add news success";

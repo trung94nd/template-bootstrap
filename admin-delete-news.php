@@ -1,5 +1,6 @@
 <?php
     include ('function.php');
+    session_start();
     $id = $_GET['id'];
     /*$arr = showgetupdatenews($id);*/
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {

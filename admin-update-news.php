@@ -37,7 +37,8 @@
                 'summary' => $_POST['summary'],
                 'content' => $_POST['content'],
                 'thumbnail' => !empty($_FILES['thumbnail']['name']) ? $_FILES['thumbnail']['name'] : $thumbnail ,
-                'featured' => $_POST['featured']
+                'featured' => $_POST['featured'],
+                'created_at' => date("Y-m-d H:i:s")
             ];
             if (updatenews($id, $data)) {
                 $_SESSION['message'] = "Update news success";
